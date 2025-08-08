@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@keyframes float {
+  50% {
+    transform: translate(-30px,-30px);
+  }
+}
+
+@keyframes float-right {
+  50% {
+    transform: translate(30px,30px);
+  }
+}
+
+.animate-diagonally-left {
+    animation: float 9s ease-in-out infinite;
+}
+
+.animate-diagonally-right {
+    animation: float 9s ease-in-out infinite;
+}
+
+
