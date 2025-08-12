@@ -1,17 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import Header from "./header/page";
 import SignUp from "./components/SignUp";
 import HomePageVideo from "./components/HomePageVideo";
 import { useEffect, useState } from "react";
+import BottomPopUp from "./components/BottomPopUp";
+import ConnectedCompanies from "./components/ConnectedCompanies";
+import VideoComponent from "./components/VideoComponent";
 
 export default function Home() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 400) { // threshold
+      if (window.scrollY > 400) {
+        // threshold
         setShow(true);
       } else {
         setShow(false);
@@ -22,21 +25,20 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center my-8">
       <Header />
       <div className="flex flex-col items-center justify-center mt-20">
+        <SignUp />
+        <HomePageVideo />
+        <div className="mt-3 w-3/4">
+          <ConnectedCompanies />
+        </div>
 
+        <div className="mt-3 w-3/4">
+          <VideoComponent />
+        </div>
 
-      <SignUp />
-      <HomePageVideo/>
-
-      <div
-      className={`fixed bottom-0 left-0 w-full bg-blue-500 text-white p-4 text-center shadow-lg transition-transform duration-300 ${
-        show ? "block" : "hidden"
-      }`}
-    >
-      This is the popup
-    </div>
+        {/* <BottomPopUp show={show} /> */}
       </div>
     </div>
   );

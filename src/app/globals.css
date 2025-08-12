@@ -42,3 +42,73 @@
 .animate-diagonally-down {
   animation: float-down 9s ease-in-out infinite;
 }
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(5%);
+  }
+}
+.animate-slide-right {
+  animation: slide-right 10s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slide-left 10s linear infinite;
+}
+
+.animate-slide-right.second {
+  transform: translateX(100%);
+}
+
+.ticker {
+  --wcds-ticker-fade-size: 5.625rem;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0,
+    rgb(0, 0, 0) var(--wcds-ticker-fade-size),
+    rgb(0, 0, 0) calc(100% - var(--wcds-ticker-fade-size)),
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+@keyframes rise-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise-up {
+  animation: rise-up 2s ease forwards;
+  transform: translateY(20px);
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.animate-up {
+  animation: up 0.5s ease-out forwards;
+  /* transform: translateY(0); */
+}
