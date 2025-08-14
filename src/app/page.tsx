@@ -1,12 +1,11 @@
 "use client";
 
+import ConnectedCompanies from "./components/homepage/ConnectedCompanies";
+import HomePageVideo from "./components/homepage/HomePageVideo";
+import SignUp from "./components/homepage/SignUp";
+import VideoComponent from "./components/homepage/VideoComponent";
 import Header from "./header/page";
-import SignUp from "./components/SignUp";
-import HomePageVideo from "./components/HomePageVideo";
 import { useEffect, useState } from "react";
-import BottomPopUp from "./components/BottomPopUp";
-import ConnectedCompanies from "./components/ConnectedCompanies";
-import VideoComponent from "./components/VideoComponent";
 
 export default function Home() {
   const [show, setShow] = useState(false);

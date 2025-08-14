@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
 
 const ConnectedCompanies = () => {
   const [hovered, setHovered] = useState(false);
@@ -30,8 +31,8 @@ const ConnectedCompanies = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <div className="text-3xl w-2/3 text-center font-bold">
+    <div className="w-full flex flex-col justify-center items-center ">
+      <div className="text-3xl w-2/3 text-center ">
         More than 90M users and 250,000 companies collaborate in the Innovation
         Workspace.
       </div>
@@ -39,32 +40,46 @@ const ConnectedCompanies = () => {
       <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="flex flex-col gap-10 items-center justify-center w-2/3 relative"
+        className="flex flex-col gap-10 items-center justify-center w-full relative mt-6 "
       >
         {hovered && (
-          <div
-            className="absolute text-black font-bold text-2xl h-10 overflow-hidden"
-          >
-            {"Meet our customers >".split(" ").map((word, index) => (
-              <span
-                key={index}
-                className="animate-rise-up ease-out"
-                style={{
-                  animationDelay: `${index * 0.2}s`,
-                }}
-              >
-                {word}{" "}
-              </span>
-            ))}
+          <div className="absolute flex items-center gap-2 text-black font-bold text-2xl h-10 overflow-hidden ">
+            <span
+              className="animate-rise-up"
+              style={{
+                animationDelay: "0.1s",
+              }}
+            >
+              Meet
+            </span>
+            <span
+              className="animate-rise-up"
+              style={{
+                animationDelay: "0.17s",
+              }}
+            >
+              Our
+            </span>
+            <span
+              className="animate-rise-up"
+              style={{
+                animationDelay: "0.24s",
+              }}
+            >
+              Customers
+            </span>
+            <span className="animate-right-to-left">
+              <IoIosArrowForward />
+            </span>
           </div>
         )}
 
         <div
-          className={`flex flex-col gap-10 items-center justify-center w-2/3 relative ${
+          className={`flex flex-col gap-10 items-center justify-center w-full relative ${
             hovered ? "opacity-10" : ""
           }`}
         >
-          <div className="flex   flex-wrap justify-center w-2/3 ">
+          <div className="flex   flex-wrap justify-center ">
             <div className="flex ticker flex-nowrap relative overflow-hidden">
               <div className="flex gap-14 animate-slide-right ">
                 {row1Companies.map((company) => (
@@ -77,7 +92,7 @@ const ConnectedCompanies = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-14 justify-center w-2/3">
+          <div className="flex gap-14 justify-center ">
             <div className="flex ticker flex-nowrap relative overflow-hidden">
               <div className="flex gap-14 animate-slide-left ">
                 {row2Companies.map((company) => (

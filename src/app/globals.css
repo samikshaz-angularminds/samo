@@ -86,7 +86,7 @@
 @keyframes rise-up {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(-30px);
   }
   100% {
     opacity: 1;
@@ -95,8 +95,20 @@
 }
 
 .animate-rise-up {
-  animation: rise-up 2s ease forwards;
-  transform: translateY(20px);
+  animation: rise-up 0.7s ease-out forwards;
+}
+
+@keyframes right-to-left{
+  0%{
+    transform: translateX(90px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+.animate-right-to-left{
+  animation: right-to-left 0.7s ease-out backwards;
 }
 
 @keyframes up {
@@ -104,7 +116,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
 }
 
